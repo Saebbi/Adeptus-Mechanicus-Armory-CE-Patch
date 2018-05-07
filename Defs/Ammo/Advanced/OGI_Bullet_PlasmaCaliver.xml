@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGIPlasmaCaliver</defName>
+      <label>Plasma Cannon charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGIPlasmaCaliver</defName>
+    <label>Plasma Cannon charge</label>
+    <ammoTypes>
+      <Ammo_OGIPlasmaCaliver>Bullet_OGIPlasmaCaliver</Ammo_OGIPlasmaCaliver>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGIPlasmaCaliverBase" ParentName="AmmoBase" Abstract="True">
+    <description>Plasma Cannon ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGIPlasmaCaliver</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGIPlasmaCaliverBase">
+    <defName>Ammo_OGIPlasmaCannon</defName>
+    <label>Plasma Cannon cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/FuelCell/Thermobaric</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGIPlasmaCaliver" ParentName="BaseBullet" Abstract="true">
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/PlamsShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIPlasma</damageDef>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGIPlasmaCaliver">
+    <defName>Bullet_OGIPlasmaCaliver</defName>
+    <label>Plasma shot</label>
+    <projectile>
+      <damageAmountBase>25</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
+	  <explosionRadius>0.50</explosionRadius>
+	  <soundExplode>OGIPP_Explosion</soundExplode>
+    </projectile>
+  </ThingDef>
+
+</Defs>

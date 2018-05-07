@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGCCBlastmaster</defName>
+      <label>Sonic Blast ammo</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGCCBlastmaster</defName>
+    <label>Sonic Blast ammo</label>
+    <ammoTypes>
+      <Ammo_OGCCBlastmaster>Bullet_OGCCBlastmaster</Ammo_OGCCBlastmaster>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGIStormBolterBase" ParentName="AmmoBase" Abstract="True">
+    <description>Sonic Blast ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGCCBlastmaster</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGCCBlastmasterBase">
+    <defName>Ammo_OGCCBlastmaster</defName>
+    <label>Sonic Blast cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGCCBlastmaster" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/SonicShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGCSonic</damageDef>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGCCBlastmaster">
+    <defName>Bullet_OGCCBlastmaster</defName>
+    <label>Sonic Blast</label>
+    <projectile>
+      <damageAmountBase>30</damageAmountBase>
+      <armorPenetration>2.0</armorPenetration>
+    </projectile>
+  </ThingDef>
+
+</Defs>

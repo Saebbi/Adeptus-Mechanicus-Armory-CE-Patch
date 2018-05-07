@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGAMRadiumCarbine</defName>
+      <label>radium charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGAMRadiumCarbine</defName>
+    <label>radium charge</label>
+    <ammoTypes>
+      <Ammo_OGAMRadiumCarbine>Bullet_OGAMRadiumCarbine</Ammo_OGAMRadiumCarbine>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGAMRadiumCarbineBase" ParentName="AmmoBase" Abstract="True">
+    <description>radium ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGAMRadiumCarbine</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGAMRadiumCarbineBase">
+    <defName>Ammo_OGAMRadiumCarbine</defName>
+    <label>radium cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGAMRadiumCarbine" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/RadiumShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIRadium</damageDef>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGAMRadiumCarbine">
+    <defName>Bullet_OGAMRadiumCarbine</defName>
+    <label>radium round</label>
+    <projectile>
+      <damageAmountBase>9</damageAmountBase>
+      <armorPenetration>0.65</armorPenetration>
+    </projectile>
+	<thingClass>AdeptusMechanicus.Projectile_BulletEffect</thingClass>
+	<AddHediffChance>0.156</AddHediffChance>
+	<HediffToAdd>RadiationPoisioning</HediffToAdd>
+  </ThingDef>
+
+</Defs>

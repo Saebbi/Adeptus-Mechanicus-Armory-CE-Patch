@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGIAutoCannon</defName>
+      <label>AutoCannon charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGIAutoCannon</defName>
+    <label>AutoCannon charge</label>
+    <ammoTypes>
+      <Ammo_OGIAutoCannon>Bullet_OGIAutoCannon</Ammo_OGIAutoCannon>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGIAutoCannonBase" ParentName="AmmoBase" Abstract="True">
+    <description>AutoCannon ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGIAutoCannon</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGIAutoCannonBase">
+    <defName>Ammo_OGIAutoCannon</defName>
+    <label>AutoCannon cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGIAutoCannon" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/BoltShotSml</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIAuto</damageDef>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGIAutoCannon">
+    <defName>Bullet_OGIAutoCannon</defName>
+    <label>AutoCannon bullet</label>
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <projectile>
+      <damageAmountBase>70</damageAmountBase>
+      <armorPenetration>0.8</armorPenetration>
+	  <explosionRadius>0.50</explosionRadius>
+	  <soundExplode>OGIAC_Explosion</soundExplode>
+    </projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_OGIAutoCannon</defName>
+    <label>make AutoCannon cartridge x300</label>
+    <description>Craft 300 AutoCannon cartridges.</description>
+    <jobString>Making AutoCannon cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_OGIAutoCannon>300</Ammo_OGIAutoCannon>
+    </products>
+	<researchPrerequisite>WRAutoCannon</researchPrerequisite>
+  </RecipeDef>
+	
+</Defs>

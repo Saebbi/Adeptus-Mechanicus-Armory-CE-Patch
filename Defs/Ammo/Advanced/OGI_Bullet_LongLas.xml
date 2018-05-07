@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGILongLas</defName>
+      <label>Long-Las charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGILongLas</defName>
+    <label>Long-Las charge</label>
+    <ammoTypes>
+      <Ammo_OGILongLas>Bullet_OGILongLas</Ammo_OGILongLas>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGILongLasBase" ParentName="AmmoBase" Abstract="True">
+    <description>Long-Las ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGILongLas</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGILongLasBase">
+    <defName>Ammo_OGILongLas</defName>
+    <label>Long-Las cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGILongLas" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/LongLasShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGILas</damageDef>
+      <speed>105</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGILongLas">
+    <defName>Bullet_OGILongLas</defName>
+    <label>Long-Las Blast</label>
+    <projectile>
+      <damageAmountBase>55</damageAmountBase>
+      <armorPenetration>0.85</armorPenetration>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+			<preFiringInitialIntensity>0</preFiringInitialIntensity>
+			<preFiringFinalIntensity>1</preFiringFinalIntensity>
+			<postFiringInitialIntensity>1</postFiringInitialIntensity>
+			<postFiringFinalIntensity>0</postFiringFinalIntensity>
+			<preFiringDuration>1</preFiringDuration>
+			<postFiringDuration>25</postFiringDuration>
+			<StartFireChance>0.1</StartFireChance>	
+  </ThingDef>
+	
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_OGILongLas</defName>
+    <label>make Long-Las cartridge x180</label>
+    <description>Craft 180 Long-Las cartridges.</description>
+    <jobString>Making Long-Las cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_OGILongLas>180</Ammo_OGILongLas>
+    </products>
+	<researchPrerequisite>WRHellgun</researchPrerequisite>
+  </RecipeDef>
+	
+</Defs>

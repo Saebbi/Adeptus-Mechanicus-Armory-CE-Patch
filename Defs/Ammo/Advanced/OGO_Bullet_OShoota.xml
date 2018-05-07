@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGOOShoota</defName>
+      <label>Shoota charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGOOShoota</defName>
+    <label>Shoota charge</label>
+    <ammoTypes>
+      <Ammo_OGOOShoota>Bullet_OGOOShoota</Ammo_OGOOShoota>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGOOShootaBase" ParentName="AmmoBase" Abstract="True">
+    <description>Shoota ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGOOShoota</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGOOShootaBase">
+    <defName>Ammo_OGOOShoota</defName>
+    <label>Shoota cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGOOShoota" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>40</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGOOShoota">
+    <defName>Bullet_OGOOShoota</defName>
+    <label>Shoota Slug</label>
+    <projectile>
+      <damageAmountBase>20</damageAmountBase>
+      <armorPenetration>0.45</armorPenetration>
+    </projectile>
+  </ThingDef>
+
+</Defs>

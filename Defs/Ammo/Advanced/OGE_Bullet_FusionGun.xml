@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGEFusionGun</defName>
+      <label>FusionGun charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGEFusionGun</defName>
+    <label>FusionGun charge</label>
+    <ammoTypes>
+      <Ammo_OGEFusionGun>Bullet_OGEFusionGun</Ammo_OGEFusionGun>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGEFusionGunBase" ParentName="AmmoBase" Abstract="True">
+    <description>FusionGun ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGEEBrightlance</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGEFusionGunBase">
+    <defName>Ammo_OGEFusionGun</defName>
+    <label>FusionGun cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGEFusionGun" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/MeltaShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIMelta</damageDef>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGEFusionGun">
+    <defName>Bullet_OGEFusionGun</defName>
+    <label>FusionGun shot</label>
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <projectile>
+      <damageAmountBase>105</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
+	  <explosionRadius>0.50</explosionRadius>
+	  <soundExplode>OGIFL_Explosion</soundExplode>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+			<createsExplosion>true</createsExplosion>
+			<preFiringInitialIntensity>0</preFiringInitialIntensity>
+			<preFiringFinalIntensity>2</preFiringFinalIntensity>
+			<postFiringInitialIntensity>2</postFiringInitialIntensity>
+			<postFiringFinalIntensity>0</postFiringFinalIntensity>
+			<preFiringDuration>60</preFiringDuration>
+			<postFiringDuration>60</postFiringDuration>
+			<StartFireChance>1</StartFireChance>
+  </ThingDef>
+
+</Defs>

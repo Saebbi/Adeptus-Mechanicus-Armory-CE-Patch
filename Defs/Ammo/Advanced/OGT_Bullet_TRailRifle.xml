@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGTTRailRifle</defName>
+      <label>Rail charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGTTRailRifle</defName>
+    <label>Rail charge</label>
+    <ammoTypes>
+      <Ammo_OGTTRailRifle>Bullet_OGTTRailRifle</Ammo_OGTTRailRifle>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGTTRailRifleBase" ParentName="AmmoBase" Abstract="True">
+    <description>Rail Rifle ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGTTRailRifle</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGTTRailRifleBase">
+    <defName>Ammo_OGTTRailRifle</defName>
+    <label>Rail Rifle cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGTTRailRifle" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/RailgunSml2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGTRailgun</damageDef>
+      <speed>135</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGTTRailRifle">
+    <defName>Bullet_OGTTRailRifle</defName>
+    <label>Rail Rifle Slug</label>
+    <projectile>
+      <damageAmountBase>60</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+		<preFiringInitialIntensity>0</preFiringInitialIntensity>
+		<preFiringFinalIntensity>1</preFiringFinalIntensity>
+		<postFiringInitialIntensity>1</postFiringInitialIntensity>
+		<postFiringFinalIntensity>0</postFiringFinalIntensity>
+		<preFiringDuration>1</preFiringDuration>
+		<postFiringDuration>25</postFiringDuration>
+		<StartFireChance>0.1</StartFireChance>	
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGNNGaussCannon</defName>
+      <label>Gauss charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGNNGaussCannon</defName>
+    <label>Gauss charge</label>
+    <ammoTypes>
+      <Ammo_OGNNGaussCannon>Bullet_OGNNGaussCannon</Ammo_OGNNGaussCannon>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGNNGaussBlasterBase" ParentName="AmmoBase" Abstract="True">
+    <description>Gauss ammo (Cannon)</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGNNGaussCannon</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGNNGaussCannonBase">
+    <defName>Ammo_OGNNGaussCannon</defName>
+    <label>Gauss cartridge (Cannon)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGNNGaussCannon" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/GaussBolt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGNGauss</damageDef>
+      <speed>105</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGNNGaussCannon">
+    <defName>Bullet_OGNNGaussCannon</defName>
+    <label>Gauss blast</label>
+    <projectile>
+      <damageAmountBase>60</damageAmountBase>
+      <armorPenetration>0.95</armorPenetration>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+			<preFiringInitialIntensity>0</preFiringInitialIntensity>
+			<preFiringFinalIntensity>2</preFiringFinalIntensity>
+			<postFiringInitialIntensity>2</postFiringInitialIntensity>
+			<postFiringFinalIntensity>0</postFiringFinalIntensity>
+			<preFiringDuration>2</preFiringDuration>
+			<postFiringDuration>50</postFiringDuration>
+  </ThingDef>
+
+</Defs>

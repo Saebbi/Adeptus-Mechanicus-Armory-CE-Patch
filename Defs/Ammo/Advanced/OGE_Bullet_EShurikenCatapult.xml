@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGEEShurikenCatapultA</defName>
+      <label>medium Shuriken charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGEEShurikenCatapultA</defName>
+    <label>medium Shuriken charge</label>
+    <ammoTypes>
+      <Ammo_OGEEShurikenCatapultA>Bullet_OGEEShurikenCatapultA</Ammo_OGEEShurikenCatapultA>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGEEShurikenCatapultABase" ParentName="AmmoBase" Abstract="True">
+    <description>medium Shuriken ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGEEShurikenCatapultA</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGEEShurikenCatapultABase">
+    <defName>Ammo_OGEEShurikenCatapult</defName>
+    <label>medium Shuriken cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/SlingBullet/Plasteel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGEEShurikenCatapultA" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/ShurikenMed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGEShuriken</damageDef>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGEEShurikenCatapultA">
+    <defName>Bullet_OGEEShurikenCatapult</defName>
+    <label>medium Shuriken</label>
+    <projectile>
+      <damageAmountBase>14</damageAmountBase>
+      <armorPenetration>0.85</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_OGEEShurikenCatapultA</defName>
+    <label>make medium Shuriken cartridge x300</label>
+    <description>Craft 300 medium Shuriken cartridges.</description>
+    <jobString>Making medium Shuriken cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_OGEEShurikenCatapultA>300</Ammo_OGEEShurikenCatapultA>
+    </products>
+	<researchPrerequisite>WRAutoCannon</researchPrerequisite>
+  </RecipeDef>
+	
+</Defs>

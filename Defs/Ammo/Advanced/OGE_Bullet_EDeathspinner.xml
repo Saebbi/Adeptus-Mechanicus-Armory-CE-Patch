@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGEEDeathspinner</defName>
+      <label>Monofilament Mesh charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGEEShurikenCatapult</defName>
+    <label>Monofilament Mesh charge</label>
+    <ammoTypes>
+      <Ammo_OGEEDeathspinner>Bullet_OGEEDeathspinner</Ammo_OGEEDeathspinner>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGEEShurikenCatapultBase" ParentName="AmmoBase" Abstract="True">
+    <description>Monofilament Mesh ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGEEDeathspinner</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGEEDeathspinnerBase">
+    <defName>Ammo_OGEEDeathspinner</defName>
+    <label>Monofilament Mesh cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/SlingBullet/Plasteel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGEEDeathspinner" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/DeathspinnerShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGEDeathspinner</damageDef>
+      <speed>135</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGEEDeathspinner">
+    <defName>Bullet_OGEEDeathspinner</defName>
+    <label>Monofilament Mesh</label>
+    <projectile>
+      <damageAmountBase>29</damageAmountBase>
+      <armorPenetration>0.95</armorPenetration>
+    </projectile>
+  </ThingDef>
+
+</Defs>

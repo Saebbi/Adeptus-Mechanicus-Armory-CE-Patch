@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGIOgrynRipperGun</defName>
+      <label>Ripper charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGIOgrynRipperGun</defName>
+    <label>Ripper charge</label>
+    <ammoTypes>
+      <Ammo_OGIOgrynRipperGun>Bullet_OGIOgrynRipperGun</Ammo_OGIOgrynRipperGun>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGIOgrynRipperGunBase" ParentName="AmmoBase" Abstract="True">
+    <description>Ripper ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGIOgrynRipperGun</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGIOgrynRipperGunBase">
+    <defName>Ammo_OGIOgrynRipperGun</defName>
+    <label>Ripper cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Shotgun/Shot</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>BuckShot</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGIOgrynRipperGun" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIRipper</damageDef>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGIOgrynRipperGun">
+    <defName>Bullet_OGIOgrynRipperGun</defName>
+    <label>Ripper blast</label>
+    <projectile>
+      <damageAmountBase>8</damageAmountBase>
+	  <pelletCount>9</pelletCount>
+	  <armorPenetration>0.65</armorPenetration>
+	  <spreadMult>17.8</spreadMult>
+    </projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_OGIOgrynRipperGun</defName>
+    <label>make Ripper cartridge x300</label>
+    <description>Craft 300 Ripper cartridges.</description>
+    <jobString>Making Ripper cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_OGIOgrynRipperGun>300</Ammo_OGIOgrynRipperGun>
+    </products>
+	<researchPrerequisite>WRRipperGun</researchPrerequisite>
+  </RecipeDef>
+	
+</Defs>

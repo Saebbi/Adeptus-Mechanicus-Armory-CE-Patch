@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_HarlequinsKiss"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>sting</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>200</power>
+					<cooldownTime>30</cooldownTime>
+					<armorPenetration>0.9</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>head</label>
+					<capacities>
+						<li>Cut</li>
+						<li>Stab</li>
+					</capacities>
+					<power>16</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetration>0.55</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_HarlequinsKiss"]/statBases</xpath>
+		<value>
+      <Bulk>0.5</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+  	<success>Always</success>
+  	<operations>
+    	<li Class="PatchOperationTest">
+      	<xpath>*/ThingDef[defName="Melee_HarlequinsKiss"]/weaponTags</xpath>
+      	<success>Invert</success>
+    	</li>
+    	<li Class="PatchOperationAdd">
+      	<xpath>*/ThingDef[defName="Melee_HarlequinsKiss"]</xpath>
+      	<value>
+        	<weaponTags />
+      	</value>
+    	</li>
+  	</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_HarlequinsKiss"]/weaponTags</xpath>
+		<value>
+	  <li>EHarlequinsKiss</li>
+	  <li>ESpecialMelee</li>
+	  <li>EArmoury</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_ScorpionChainsword"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>pommel</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetration>0.55</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>2.5</cooldownTime>
+					<armorPenetration>0.6</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_ScorpionChainsword"]/statBases</xpath>
+		<value>
+      <Bulk>3.5</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+  	<success>Always</success>
+  	<operations>
+    	<li Class="PatchOperationTest">
+      	<xpath>*/ThingDef[defName="Melee_ScorpionChainsword"]/weaponTags</xpath>
+      	<success>Invert</success>
+    	</li>
+    	<li Class="PatchOperationAdd">
+      	<xpath>*/ThingDef[defName="Melee_ScorpionChainsword"]</xpath>
+      	<value>
+        	<weaponTags />
+      	</value>
+    	</li>
+  	</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_ScorpionChainsword"]/weaponTags</xpath>
+		<value>
+	  <li>EScorpionChainsword</li>
+	  <li>EArmoury</li>
+		</value>
+	</Operation>	
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_PowerSword"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>pommel</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetration>0.9</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>2.5</cooldownTime>
+					<armorPenetration>0.8</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_PowerSword"]/statBases</xpath>
+		<value>
+      <Bulk>3.5</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+  	<success>Always</success>
+  	<operations>
+    	<li Class="PatchOperationTest">
+      	<xpath>*/ThingDef[defName="Melee_PowerSword"]/weaponTags</xpath>
+      	<success>Invert</success>
+    	</li>
+    	<li Class="PatchOperationAdd">
+      	<xpath>*/ThingDef[defName="Melee_PowerSword"]</xpath>
+      	<value>
+        	<weaponTags />
+      	</value>
+    	</li>
+  	</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_PowerSword"]/weaponTags</xpath>
+		<value>
+	  <li>EPowerSword</li>
+	  <li>EArmoury</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_Witchblade"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>pommel</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetration>0.85</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>2.5</cooldownTime>
+					<armorPenetration>0.8</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_Witchblade"]/statBases</xpath>
+		<value>
+      <Bulk>3.5</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+  	<success>Always</success>
+  	<operations>
+    	<li Class="PatchOperationTest">
+      	<xpath>*/ThingDef[defName="Melee_Witchblade"]/weaponTags</xpath>
+      	<success>Invert</success>
+    	</li>
+    	<li Class="PatchOperationAdd">
+      	<xpath>*/ThingDef[defName="Melee_Witchblade"]</xpath>
+      	<value>
+        	<weaponTags />
+      	</value>
+    	</li>
+  	</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_PowerSword"]/weaponTags</xpath>
+		<value>
+	  <li>EWitchblade</li>
+	  <li>EPsykerMelee</li>
+	  <li>EArmoury</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_GhostSword"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>pommel</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetration>0.7</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>2.5</cooldownTime>
+					<armorPenetration>0.8</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_GhostSword"]/statBases</xpath>
+		<value>
+      <Bulk>1.5</Bulk>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_DualGhostSword"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>pommel</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>0.5</cooldownTime>
+					<armorPenetration>0.12</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>0.5</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>0.7</cooldownTime>
+					<armorPenetration>0.7</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>1.25</cooldownTime>
+					<armorPenetration>0.8</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_DualGhostSword"]/statBases</xpath>
+		<value>
+      <Bulk>3.0</Bulk>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_GhostAxe"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>hilt</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>head</label>
+					<capacities>
+						<li>Cut</li>
+						<li>Stab</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>1.9</cooldownTime>
+					<armorPenetration>1.4</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_GhostAxe"]/statBases</xpath>
+		<value>
+      <Bulk>5.0</Bulk>
+		</value>
+	</Operation>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>SingingSpear_Thrown</defName>
+		<label>Singing Spear</label>
+		<graphicData>
+			<texPath>Things/Projectile/SingingSpear_Thrown</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>OGIPowerWeapon</damageDef>
+			<damageAmountBase>30</damageAmountBase>
+			<speed>26</speed>
+			<armorPenetration>0.75</armorPenetration>
+		</projectile>
+	</ThingDef>
+	
+    <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Melee_SingingSpear</defName>
+    <statBases>
+		
+        
+        <SightsEfficiency>1.0</SightsEfficiency>
+        <ShotSpread>0.11</ShotSpread>
+        <SwayFactor>1.2</SwayFactor>
+        <Bulk>5.1</Bulk> 
+	</statBases>
+    <Properties>
+		<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>SingingSpear_Thrown</defaultProjectile>
+        <warmupTime>4.0</warmupTime>
+        <range>20</range>
+        <soundCast>Interact_BeatFire</soundCast>
+	</Properties>
+    
+    <FireModes>
+        <aiAimMode>AimedShot</aiAimMode>
+	</FireModes>
+    <weaponTags>
+		<li>ESingingSpear</li>
+		<li>EPsykerMelee</li>
+		<li>EArmoury</li>
+	</weaponTags>
+    
+  </Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_SingingSpear"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>shaft</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>10</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.75</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>1.7</cooldownTime>
+					<armorPenetration>0.75</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="Melee_Executioner"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>shaft</label>
+					<capacities>
+						<li>Blunt</li>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>2.3</cooldownTime>
+					<armorPenetration>0.2</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>50.5</power>
+					<cooldownTime>2.3</cooldownTime>
+					<armorPenetration>1.0</armorPenetration>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>blade</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>1.7</cooldownTime>
+					<armorPenetration>0.85</armorPenetration>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName="Melee_Executioner"]/statBases</xpath>
+		<value>
+      <Bulk>2.0</Bulk>
+		</value>
+	</Operation>
+	
+</Patch>
+

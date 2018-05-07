@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGOOZappKannon</defName>
+      <label>Zapp charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGOOZappKannon</defName>
+    <label>Zapp charge</label>
+    <ammoTypes>
+      <Ammo_OGOOZappKannon>Bullet_OGOOZappKannon</Ammo_OGOOZappKannon>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGOOZappKannonBase" ParentName="AmmoBase" Abstract="True">
+    <description>Zapp ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGOOZappKannon</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGOOZappKannonBase">
+    <defName>Ammo_OGOOZappKannon</defName>
+    <label>Zapp cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGOOZappKannon" ParentName="BaseBullet" Abstract="true">
+ 	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/LightningBolt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGILas</damageDef>
+      <speed>105</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGOOZappKannon">
+    <defName>Bullet_OGOOZappKannon</defName>
+    <label>Zapp</label>
+    <projectile>
+      <damageAmountBase>75</damageAmountBase>
+	  <explosionRadius>0.55</explosionRadius>
+      <armorPenetration>0.95</armorPenetration>
+	  <soundExplode>OGIPP_Explosion</soundExplode>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+			<createsExplosion>true</createsExplosion>
+			<preFiringInitialIntensity>0</preFiringInitialIntensity>
+			<preFiringFinalIntensity>2</preFiringFinalIntensity>
+			<postFiringInitialIntensity>2</postFiringInitialIntensity>
+			<postFiringFinalIntensity>0</postFiringFinalIntensity>
+			<preFiringDuration>2</preFiringDuration>
+			<postFiringDuration>50</postFiringDuration>
+			<StartFireChance>0.1</StartFireChance>	
+  </ThingDef>
+
+</Defs>

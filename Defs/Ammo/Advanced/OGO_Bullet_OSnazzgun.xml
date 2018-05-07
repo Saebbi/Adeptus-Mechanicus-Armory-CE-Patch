@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGOOSnazzgun</defName>
+      <label>Snazzgun charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGOOSnazzgun</defName>
+    <label>Snazzgun charge</label>
+    <ammoTypes>
+      <Ammo_OGOOSnazzgun>Bullet_OGOOSnazzgun</Ammo_OGOOSnazzgun>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGOOSnazzgunBase" ParentName="AmmoBase" Abstract="True">
+    <description>Snazzgun ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGOOSnazzgun</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGOOSnazzgunBase">
+    <defName>Ammo_OGOOSnazzgun</defName>
+    <label>Snazzgun cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGOOSnazzgun" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/LasCShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>135</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGOOSnazzgun">
+    <defName>Bullet_OGOOSnazzgun</defName>
+    <label>Snazzgun slug</label>
+    <projectile>
+      <damageAmountBase>19</damageAmountBase>
+      <armorPenetration>0.95</armorPenetration>
+    </projectile>
+		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
+			<preFiringInitialIntensity>0</preFiringInitialIntensity>
+			<preFiringFinalIntensity>2</preFiringFinalIntensity>
+			<postFiringInitialIntensity>2</postFiringInitialIntensity>
+			<postFiringFinalIntensity>0</postFiringFinalIntensity>
+			<preFiringDuration>6</preFiringDuration>
+			<postFiringDuration>6</postFiringDuration>
+			<StartFireChance>0.1</StartFireChance>	
+  </ThingDef>
+
+</Defs>

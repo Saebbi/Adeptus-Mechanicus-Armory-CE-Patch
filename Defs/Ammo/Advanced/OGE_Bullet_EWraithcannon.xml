@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGEEWraithcannon</defName>
+      <label>Wraith charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGEEWraithcannon</defName>
+    <label>Wraith charge</label>
+    <ammoTypes>
+      <Ammo_OGEEWraithcannon>Bullet_OGEEWraithcannon</Ammo_OGEEWraithcannon>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGEEWraithcannonBase" ParentName="AmmoBase" Abstract="True">
+    <description>Wraith ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGEEWraithcannon</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGEEStarcannonBase">
+    <defName>Ammo_OGEEWraithcannon</defName>
+    <label>Wraith cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Ion</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGEEWraithcannon" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/WraithcannonShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGEWraith</damageDef>
+      <speed>135</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGEEWraithcannon">
+    <defName>Bullet_OGEEWraithcannon</defName>
+    <label>Wraith Blast</label>
+    <projectile>
+      <damageAmountBase>29</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>

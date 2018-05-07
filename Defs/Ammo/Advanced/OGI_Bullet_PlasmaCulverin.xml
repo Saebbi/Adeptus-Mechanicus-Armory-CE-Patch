@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoOGIPlasmaCulverin</defName>
+      <label>Plasma Cannon charge</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_OGIPlasmaCulverin</defName>
+    <label>Plasma Cannon charge</label>
+    <ammoTypes>
+      <Ammo_OGIPlasmaCulverin>Bullet_OGIPlasmaCulverin</Ammo_OGIPlasmaCulverin>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="OGIPlasmaCulverinBase" ParentName="AmmoBase" Abstract="True">
+    <description>Plasma Cannon ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoOGIPlasmaCulverin</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="OGIPlasmaCulverinBase">
+    <defName>Ammo_OGIPlasmaCulverin</defName>
+    <label>Plasma Cannon cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/FuelCell/Thermobaric</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseOGIPlasmaCulverin" ParentName="BaseBullet" Abstract="true">
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/PlamsShotLrg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>OGIPlasmaCannon</damageDef>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseOGIPlasmaCulverin">
+    <defName>Bullet_OGIPlasmaCulverin</defName>
+    <label>Plasma shot</label>
+    <projectile>
+      <damageAmountBase>70</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
+	  <explosionRadius>1.05</explosionRadius>
+	  <soundExplode>OGIPC_Explosion</soundExplode>
+    </projectile>
+  </ThingDef>
+
+</Defs>
