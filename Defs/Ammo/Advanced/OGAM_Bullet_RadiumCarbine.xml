@@ -51,7 +51,10 @@
 	<!-- ================== Projectiles ================== -->
 
   <ThingDef Name="BaseOGAMRadiumCarbine" ParentName="BaseBullet" Abstract="true">
-    <graphicData>
+	<thingClass>AdeptusMechanicus.Projectile_BulletEffect</thingClass>
+	<AddHediffChance>0.156</AddHediffChance>
+	<HediffToAdd>RadiationPoisioning</HediffToAdd>
+	<graphicData>
       <texPath>Things/Projectile/RadiumShotSml</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
@@ -68,9 +71,6 @@
       <damageAmountBase>9</damageAmountBase>
       <armorPenetration>0.65</armorPenetration>
     </projectile>
-	<thingClass>AdeptusMechanicus.Projectile_BulletEffect</thingClass>
-	<AddHediffChance>0.156</AddHediffChance>
-	<HediffToAdd>RadiationPoisioning</HediffToAdd>
   </ThingDef>
 
 </Defs>

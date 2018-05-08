@@ -69,11 +69,6 @@
       <SwayFactor>1.5</SwayFactor>
       <Bulk>3.50</Bulk>
     </statBases>
-	<comps>     
-		<li>
-			<compClass>AdeptusMechanicus.CompOversizedWeapon</compClass>
-		</li>
-	</comps>
     <Properties>
 		<recoilAmount>0.45</recoilAmount>
       <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -142,11 +137,6 @@
       <SwayFactor>1.5</SwayFactor>
       <Bulk>4.50</Bulk>
     </statBases>
-	<comps>     
-		<li>
-			<compClass>AdeptusMechanicus.CompOversizedWeapon</compClass>
-		</li>
-	</comps>
     <Properties>
 		<recoilAmount>0.45</recoilAmount>
       <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -283,11 +273,6 @@
       <SwayFactor>1.5</SwayFactor>
       <Bulk>4.50</Bulk>
     </statBases>
-	<comps>     
-		<li>
-			<compClass>AdeptusMechanicus.CompOversizedWeapon</compClass>
-		</li>
-	</comps>
     <Properties>
 		<recoilAmount>0.45</recoilAmount>
       <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -472,11 +457,6 @@
       <SwayFactor>1.5</SwayFactor>
       <Bulk>4.50</Bulk>
     </statBases>
-	<comps>     
-		<li>
-			<compClass>AdeptusMechanicus.CompOversizedWeapon</compClass>
-		</li>
-	</comps>
     <Properties>
 		<recoilAmount>0.5</recoilAmount>
       <verbClass>CombatExtended.Verb_ShootCE</verbClass>

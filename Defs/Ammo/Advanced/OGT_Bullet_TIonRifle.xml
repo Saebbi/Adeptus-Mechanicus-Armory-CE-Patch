@@ -71,15 +71,6 @@
       <armorPenetration>3.0</armorPenetration>
 	  <soundExplode>OGIPP_Explosion</soundExplode>
     </projectile>
-		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
-		<createsExplosion>true</createsExplosion>
-		<preFiringInitialIntensity>0</preFiringInitialIntensity>
-		<preFiringFinalIntensity>2</preFiringFinalIntensity>
-		<postFiringInitialIntensity>2</postFiringInitialIntensity>
-		<postFiringFinalIntensity>0</postFiringFinalIntensity>
-		<preFiringDuration>120</preFiringDuration>
-		<postFiringDuration>90</postFiringDuration>
-		<StartFireChance>1</StartFireChance>
   </ThingDef>
 
 </Defs>

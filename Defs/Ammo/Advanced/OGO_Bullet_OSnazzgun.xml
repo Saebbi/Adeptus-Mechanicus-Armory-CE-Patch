@@ -68,14 +68,6 @@
       <damageAmountBase>19</damageAmountBase>
       <armorPenetration>0.95</armorPenetration>
     </projectile>
-		<thingClass>AdeptusMechanicus.Projectile_Laser</thingClass>
-			<preFiringInitialIntensity>0</preFiringInitialIntensity>
-			<preFiringFinalIntensity>2</preFiringFinalIntensity>
-			<postFiringInitialIntensity>2</postFiringInitialIntensity>
-			<postFiringFinalIntensity>0</postFiringFinalIntensity>
-			<preFiringDuration>6</preFiringDuration>
-			<postFiringDuration>6</postFiringDuration>
-			<StartFireChance>0.1</StartFireChance>	
   </ThingDef>
 
 </Defs>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Adeptus Mechanicus Armory CE Patch</name>
+	<name>Adeptus Mechanicus Armoury CE Patch</name>
 	<author>Saebbi</author>
 	<url></url>
 	<targetVersion>0.18.1722</targetVersion>
-	<description>Patches the Adeptus Mechanicus Armory mod to work with Combat Extended.</description>
+	<description>Patches the Adeptus Mechanicus Armoury mod to work with Combat Extended.</description>
 </ModMetaData>
